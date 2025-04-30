@@ -7,7 +7,7 @@ function App() {
   const [emailCopied, setEmailCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('your.email@example.com');
+    navigator.clipboard.writeText('ianmbarbero@gmail.com');
     setEmailCopied(true);
     setTimeout(() => setEmailCopied(false), 2000);
   };
@@ -84,19 +84,19 @@ function App() {
             </div>
             <div className="project-card">
               <h3>SASE Front End Intern</h3>
-              <p className = "project-description">Working under webmaster to maintain and develop SASE homepage using AWS Amplify</p>
+              <p>Working under webmaster to maintain and develop SASE homepage using AWS Amplify</p>
             </div>
             <div className="project-card">
               <h3>UI/UX Certificate - Google on Coursera</h3>
-              <p className = "project-description">Completed Google's UI/UX Design Professional Certificate</p>
+              <p>Completed Google's UI/UX Design Professional Certificate</p>
             </div>
             <div className="project-card">
-              <h3>This Website</h3>
-              <p className = "project-description">A responsive portfolio website built with React</p>
+              <h3>Portfolio Website</h3>
+              <p>A responsive portfolio website built with React</p>
             </div>
             <div className="project-card">
               <h3>Order of Draw</h3>
-              <p className = "project-description">3rd Place Winner of SASE Hackathon. Web app that aids training Phlebotomist learn order of drawing blood.</p>
+              <p>3rd Place Winner of SASE Hackathon. Web app that aids training Phlebotomist learn order of drawing blood.</p>
             </div>
           </div>
         );
