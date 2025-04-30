@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/portfolio-ian/static/css/main.f457602b.css",
+    "main.js": "/portfolio-ian/static/js/main.71c66433.js",
+    "static/media/background.gif": "/portfolio-ian/static/media/background.ade54ef3dc93c595bb14.gif",
+    "index.html": "/portfolio-ian/index.html",
+    "main.f457602b.css.map": "/portfolio-ian/static/css/main.f457602b.css.map",
+    "main.71c66433.js.map": "/portfolio-ian/static/js/main.71c66433.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f457602b.css",
+    "static/js/main.71c66433.js"
+  ]
+}
