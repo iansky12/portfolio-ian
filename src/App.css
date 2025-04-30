@@ -1,38 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --text: #e6e8ed;
+  --background: #292f39;
+  --primary: #e9e9df;
+  --secondary: #344666;
+  --accent: #5779b3;
+  --error: #cc6363;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dictionary-card, .content-section {
+  background: var(--primary);
+  width: 1000px;
+  min-height: 500px;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--background);
+  transform: scale(1.25);
+  transform-origin: top center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-header {
+  background: var(--background);
+  padding: 1.5rem 2.5rem;
+  margin: -2.5rem -2.5rem 2.5rem -2.5rem;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-title {
+  font-family: 'Made Tommy', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.graphic-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.graphic-placeholder {
+  width: 200px;
+  height: 200px;
+  background: var(--background);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.name-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--background);
+}
+
+.name-highlight {
+  background: var(--background);
+  color: var(--primary);
+  padding: 0.3rem 1rem;
+  border-radius: 4px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.pronunciation {
+  font-size: 1.5rem;
+  color: var(--background);
+  margin-top: 0.5rem;
+}
+
+.declaration {
+  font-family: 'Made Tommy', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--background);
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.definition {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: auto;
+}
+
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--background);
+  transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+  transform: translateY(-5px);
+  color: var(--accent);
+}
+
+.nav-icon:hover .nav-icon-label {
+  color: var(--accent);
+}
+
+.nav-icon i {
+  font-size: 3rem;
+}
+
+.nav-icon-label {
+  font-size: 1.8rem;
+  color: var(--background);
+  transition: color 0.3s ease;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--error);
+  border: none;
+  color: var(--primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: #f08c8c;
+  transform: scale(1.1);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--background);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  color: var(--accent);
+}
+
+.social-link i {
+  font-size: 3.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-link span {
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover i {
+  transform: scale(1.2) translateY(-5px);
+  color: var(--accent);
+}
+
+.social-link:hover span {
+  transform: translateY(-5px);
+  color: var(--accent);
+}
+
+.email-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.email-text {
+  font-size: 1.8rem;
+  color: var(--background);
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  color: var(--background);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.copy-button:hover {
+  color: var(--accent);
+}
+
+.project-card {
+  background: var(--secondary);
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: left;
+  color: var(--primary);
+}
+
+.project-card h3 {
+  font-family: 'Made Tommy', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1.4rem;
+  color: var(--primary);
+  line-height: 1.3;
+}
+
+
+.content-section p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .dictionary-card,
+  .content-section {
+    width: 90%;
+    max-width: 600px;
+    min-height: 500px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.about-content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-intro {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.about-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+
+.about-list li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.about-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.education-section {
+  margin-bottom: 3rem;
+}
+
+.education-section h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.education-block {
+  background: var(--secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.education-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.education-school {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.education-date {
+  font-size: 1rem;
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+.interests-section {
+  margin-bottom: 2rem;
+}
+
+.interests-section h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.interests-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.interests-list li {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background: var(--secondary);
+  border-radius: 4px;
+  color: var(--primary);
 }
